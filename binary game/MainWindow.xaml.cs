@@ -49,9 +49,16 @@ namespace binary_game
         }
         private void Start()
         {
+            Label128.Content = "0";
+            Label64.Content = "0";
+            Label32.Content = "0";
+            Label16.Content = "0";
+            Label8.Content = "0";
+            Label4.Content = "0";
+            Label2.Content = "0";
+            Label1.Content = "0";
             if (seconds != 10)
                 seconds -= 2;
-            Try.Text = "";
             lblTimerDisplay.Content = seconds;
             GenerateNumber();
             StartBtn.Visibility = Visibility.Hidden;
@@ -91,18 +98,120 @@ namespace binary_game
         {
             Question.Content = number;
         }
-
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
-            string textboxcontent = Try.Text;
-            string tryint = textboxcontent;
-            if (tryint == Answer)
+            string binarystring = "";
+            binarystring += Label128.Content;
+            binarystring += Label64.Content;
+            binarystring += Label32.Content;
+            binarystring += Label16.Content;
+            binarystring += Label8.Content;
+            binarystring += Label4.Content;
+            binarystring += Label2.Content;
+            binarystring += Label1.Content;
+            if (binarystring == Answer)
             {
                 Start();
             }
             else
             {
                 MessageBox.Show("wrong");
+            }
+        }
+
+        private void Button_Click_Switch128(object sender, RoutedEventArgs e)
+        {
+            if(Label128.Content == "0")
+            {
+                Label128.Content = "1";
+            }
+            else if (Label128.Content == "1")
+            {
+                Label128.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch64(object sender, RoutedEventArgs e)
+        {
+            if (Label64.Content == "0")
+            {
+                Label64.Content = "1";
+            }
+            else if (Label64.Content == "1")
+            {
+                Label64.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch32(object sender, RoutedEventArgs e)
+        {
+            if (Label32.Content == "0")
+            {
+                Label32.Content = "1";
+            }
+            else if (Label32.Content == "1")
+            {
+                Label32.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch16(object sender, RoutedEventArgs e)
+        {
+            if (Label16.Content == "0")
+            {
+                Label16.Content = "1";
+            }
+            else if (Label16.Content == "1")
+            {
+                Label16.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch8(object sender, RoutedEventArgs e)
+        {
+            if (Label8.Content == "0")
+            {
+                Label8.Content = "1";
+            }
+            else if (Label8.Content == "1")
+            {
+                Label8.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch4(object sender, RoutedEventArgs e)
+        {
+            if (Label4.Content == "0")
+            {
+                Label4.Content = "1";
+            }
+            else if (Label4.Content == "1")
+            {
+                Label4.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch2(object sender, RoutedEventArgs e)
+        {
+            if (Label2.Content == "0")
+            {
+                Label2.Content = "1";
+            }
+            else if (Label2.Content == "1")
+            {
+                Label2.Content = "0";
+            }
+        }
+
+        private void Button_Click_Switch1(object sender, RoutedEventArgs e)
+        {
+            if (Label1.Content == "0")
+            {
+                Label1.Content = "1";
+            }
+            else if (Label1.Content == "1")
+            {
+                Label1.Content = "0";
             }
         }
     }
