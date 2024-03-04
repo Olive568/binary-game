@@ -1,0 +1,18 @@
+﻿<Window x:Class="binary_game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:binary_game"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblTimerDisplay" Content="30" HorizontalAlignment="Center" Margin="0,126,0,0" VerticalAlignment="Top" 
+               FontSize="48" FontWeight="Bold" FontFamily="Courier New"/>
+        <Button Content="Start" Name="StartBtn" HorizontalAlignment="Left" Margin="323,217,0,0" VerticalAlignment="Top" Click="StartBtn_Click"/>
+        <Label Content="Label" Name="Question" HorizontalAlignment="Left" Margin="520,116,0,0" FontSize="34" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="Try" Margin="491,217,0,0" TextWrapping="Wrap" Text="" FontSize="36" VerticalAlignment="Top" Width="196"/>
+        <TextBlock HorizontalAlignment="Left" Margin="565,285,0,0" TextWrapping="Wrap" Text="Write answer heree" VerticalAlignment="Top"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Name="SubmitBtn" Margin="540,323,0,0" VerticalAlignment="Top" Click="SubmitBtn_Click"/>
+    </Grid>
+</Window>
