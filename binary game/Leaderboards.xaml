@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
-        Title="Leaderboards" Height="450" Width="800">
+        Title="Leaderboards" Height="500" Width="350">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\bin\Debug\LeaderboardScreen.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+        </Grid.Background>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="68,78,68,85" Background="{x:Null}" BorderBrush="{x:Null}"/>
+
     </Grid>
 </Window>
