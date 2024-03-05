@@ -5,38 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="365" Width="620">
     <Grid>
-        <Label x:Name="lblTimerDisplay" Content="30" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" 
-               FontSize="48" FontWeight="Bold" FontFamily="Courier New"/>
-        <Button Content="Start" Name="StartBtn" HorizontalAlignment="Left" Margin="42,21,0,0" VerticalAlignment="Top" Click="StartBtn_Click"/>
-        <Label Content="" Name="Question" HorizontalAlignment="Left" Margin="355,83,0,0" FontSize="34" VerticalAlignment="Top"/>
-        <Button Content="Submit" HorizontalAlignment="Center" Name="SubmitBtn" Margin="0,249,0,0" VerticalAlignment="Top" Click="SubmitBtn_Click"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="110,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label128" HorizontalAlignment="Left" Margin="119,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="172,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label64" HorizontalAlignment="Left" Margin="181,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="233,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label32" HorizontalAlignment="Left" Margin="242,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="294,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label16" HorizontalAlignment="Left" Margin="302,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="444,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label8" HorizontalAlignment="Left" Margin="452,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="502,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label4" HorizontalAlignment="Left" Margin="510,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="560,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label2" HorizontalAlignment="Left" Margin="568,168,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left"  Height="50" Margin="619,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Label Content="0" FontSize="40" Name="Label1" HorizontalAlignment="Left" Margin="627,168,0,0" VerticalAlignment="Top"/>
-        <Button Content="Switch" Name="Switch128" HorizontalAlignment="Left" Margin="115,153,0,0" VerticalAlignment="Top" Width="41" Click="Button_Click_Switch128"/>
-        <Button Content="Switch" Name="Switch64" HorizontalAlignment="Left" Margin="176,152,0,0" VerticalAlignment="Top" Width="42" Click="Button_Click_Switch64"/>
-        <Button Content="Switch" Name="Switch32" HorizontalAlignment="Left" Margin="238,152,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Switch32"/>
-        <Button Content="Switch" Name="Switch16" HorizontalAlignment="Left" Margin="298,152,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Switch16"/>
-        <Button Content="Switch" Name="Switch8" HorizontalAlignment="Left" Margin="448,152,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Switch8"/>
-        <Button Content="Switch" Name="Switch4" HorizontalAlignment="Left" Margin="507,152,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Switch4"/>
-        <Button Content="Switch" Name="Switch2" HorizontalAlignment="Left" Margin="565,152,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Switch2"/>
-        <Button Content="Switch" Name="Switch1" HorizontalAlignment="Left" Margin="623,152,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Switch1"/>
-        <Rectangle HorizontalAlignment="Center" Height="41" Margin="0,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="186"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\bin\Debug\GameImage.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+        </Grid.Background>
+        <Label x:Name="lblTimerDisplay" Content="30" HorizontalAlignment="Left" Margin="271,28,0,0" VerticalAlignment="Top" 
+               FontSize="48" FontWeight="Bold" FontFamily="Courier New" Opacity="0.75"/>
+        <Button Content="Start" Name="StartBtn" HorizontalAlignment="Left" Margin="271,242,0,0" VerticalAlignment="Top" Click="StartBtn_Click" RenderTransformOrigin="-2.312,1.572" Height="24" Width="61" Background="{x:Null}" BorderThickness="0,0,0,0"/>
+
+        <Label Content="" Name="Question" HorizontalAlignment="Left" Foreground="GreenYellow" Margin="256,83,0,0" FontSize="34" VerticalAlignment="Top"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Name="SubmitBtn" Margin="271,242,0,0" VerticalAlignment="Top" Click="SubmitBtn_Click" IsEnabled="False" Height="24" Width="61" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Visibility="Hidden"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="26,171,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
+        <Label Content="0" FontSize="40" Name="Label128" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="35,162,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="87,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
+        <Label Content="0" FontSize="40" Name="Label64" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="96,163,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="147,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
+        <Label Content="0" FontSize="40" Name="Label32" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="156,163,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="210,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
+        <Label Content="0" FontSize="40" Name="Label16" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="218,163,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="343,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
+        <Label Content="0" FontSize="40" Name="Label8" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="351,163,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="402,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50" Grid.ColumnSpan="2"/>
+        <Label Content="0" FontSize="40" Name="Label4" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="410,163,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="44,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50" Grid.Column="1"/>
+        <Label Content="0" FontSize="40" Name="Label2" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="52,163,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left"  Height="50" Margin="105,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50" Grid.Column="1"/>
+        <Label Content="0" FontSize="40" Name="Label1" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="113,163,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="" Name="Switch128" HorizontalAlignment="Left" Margin="22,147,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click_Switch128" Opacity="0"/>
+        <Button Content="Switch" Name="Switch64" HorizontalAlignment="Left" Margin="84,147,0,0" VerticalAlignment="Top" Width="56" Click="Button_Click_Switch64" Opacity="0"/>
+        <Button Content="Switch" Name="Switch32" HorizontalAlignment="Left" Margin="145,147,0,0" VerticalAlignment="Top" Width="55" Click="Button_Click_Switch32" Opacity="0"/>
+        <Button Content="Switch" Name="Switch16" HorizontalAlignment="Left" Margin="205,148,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click_Switch16" Opacity="0"/>
+        <Button Content="Switch" Name="Switch8" HorizontalAlignment="Left" Margin="338,147,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click_Switch8" Opacity="0"/>
+        <Button Content="Switch" Name="Switch4" HorizontalAlignment="Left" Margin="400,147,0,0" VerticalAlignment="Top" Width="55" Click="Button_Click_Switch4" Opacity="0" Grid.ColumnSpan="2"/>
+        <Button Content="Switch" Name="Switch2" HorizontalAlignment="Left" Margin="41,147,0,0" VerticalAlignment="Top" Width="55" Click="Button_Click_Switch2" Opacity="0" Grid.Column="1"/>
+        <Button Content="Switch" Name="Switch1" HorizontalAlignment="Left" Margin="101,147,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_Switch1" Opacity="0" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="41" Margin="218,97,0,0" Stroke="Black" VerticalAlignment="Top" Width="186"/>
     </Grid>
 </Window>
 

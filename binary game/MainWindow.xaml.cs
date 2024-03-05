@@ -25,8 +25,21 @@ namespace binary_game
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             Window1 w1 = new Window1();
             w1.Show();
+            this.Close();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Leaderboards ld = new Leaderboards();
+            ld.Show();
+            this.Close();
         }
     }
 }

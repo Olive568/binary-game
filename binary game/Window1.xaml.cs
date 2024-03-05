@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Media;
+
 
 namespace binary_game
 {
@@ -21,6 +23,7 @@ namespace binary_game
     /// </summary>
     public partial class Window1 : Window
     {
+        private SoundPlayer player;
         int seconds = 32;
         string Answer = "";
         bool _timerStatus = false;
@@ -28,6 +31,7 @@ namespace binary_game
         public Window1()
         {
             InitializeComponent();
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\bin\Debug\beep.wav");
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
             _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
@@ -36,7 +40,12 @@ namespace binary_game
         {
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
             sec--;
-            if (sec == 0)
+            player.Play();
+            if (sec == 10)
+            {
+                lblTimerDisplay.Foreground = Brushes.Red;
+            }
+            else if (sec == 0)
             {
                 MessageBox.Show("You lose");
             }
@@ -45,6 +54,8 @@ namespace binary_game
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
+            SubmitBtn.IsEnabled = true;
+            SubmitBtn.Visibility = Visibility.Visible;
             Start();
         }
         private void Start()
