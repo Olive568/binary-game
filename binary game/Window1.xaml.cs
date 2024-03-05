@@ -45,11 +45,15 @@ namespace binary_game
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
             sec--;
             player.Play();
+            if(sec > 10)
+                lblTimerDisplay.Foreground = Brushes.Black;
             if (sec == 10)
             {
-                Blow.Play();
+                
                 lblTimerDisplay.Foreground = Brushes.Red;
             }
+            else if(sec == 6)
+                Blow.Play();
             else if (sec == 0)
             {
                 MessageBox.Show("You lose");
