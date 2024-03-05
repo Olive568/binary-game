@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace binary_game
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Leaderboards.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Leaderboards : Window
     {
-
-        public MainWindow()
+        public Leaderboards()
         {
             InitializeComponent();
-            Window1 w1 = new Window1();
-            w1.Show();
         }
     }
 }
