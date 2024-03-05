@@ -24,6 +24,7 @@ namespace binary_game
     public partial class Window1 : Window
     {
         private SoundPlayer player;
+        private MediaPlayer Blow = new MediaPlayer();
         int seconds = 32;
         string Answer = "";
         bool _timerStatus = false;
@@ -31,6 +32,9 @@ namespace binary_game
         public Window1()
         {
             InitializeComponent();
+            Blow.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\bin\Debug\blow.wav"));
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\bin\Debug\GameStart.wav");
+            player.Play();
             player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\bin\Debug\beep.wav");
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
@@ -43,6 +47,7 @@ namespace binary_game
             player.Play();
             if (sec == 10)
             {
+                Blow.Play();
                 lblTimerDisplay.Foreground = Brushes.Red;
             }
             else if (sec == 0)
