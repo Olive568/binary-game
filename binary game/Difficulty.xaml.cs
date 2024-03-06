@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,9 +20,12 @@ namespace binary_game
     /// </summary>
     public partial class Difficulty : Window
     {
+        private SoundPlayer player;
         public Difficulty()
         {
             InitializeComponent();
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\DiffTheme.wav");
+            player.Play();
         }
 
         private void Easy_Click(object sender, RoutedEventArgs e)
