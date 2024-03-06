@@ -23,6 +23,7 @@ namespace binary_game
     /// </summary>
     public partial class Window1 : Window
     {
+        int quest = 0;
         int score = 0;
         int Total_Time = 0;
         private SoundPlayer player;
@@ -64,6 +65,7 @@ namespace binary_game
             {
                 Random rnd = new Random();
                 int chance = rnd.Next(1, 101);
+                Question.Content = quest;
                 Label128.Opacity = 100;
                 Label64.Opacity = 100;
                 Label32.Opacity = 100;
@@ -83,6 +85,13 @@ namespace binary_game
                     Label2.Opacity = 0;
                     Label1.Opacity = 0;
                 }
+                if(diff == "hard")
+                {
+                    chance = rnd.Next(1, 101);
+                    if(chance > 66)
+                        Question.Content = "error";
+                }
+                    
             }
             if(timer > 10)
                 lblTimerDisplay.Foreground = Brushes.Black;
@@ -116,7 +125,7 @@ namespace binary_game
             Label4.Content = "0";
             Label2.Content = "0";
             Label1.Content = "0";
-            lblTimerDisplay.Content = seconds;
+            lblTimerDisplay.Content = timer;
             GenerateNumber();
             StartBtn.Visibility = Visibility.Hidden;
             //StartBtn.Visibility = Visibility.Visible;
@@ -126,6 +135,7 @@ namespace binary_game
         {
             Random rnd = new Random();
             int number = rnd.Next(1, 256);
+            quest = number;
             string binary = Convert(number);
             Answer = binary;
             Game(number);
