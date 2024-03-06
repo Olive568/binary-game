@@ -27,7 +27,7 @@ namespace binary_game
         private void Easy_Click(object sender, RoutedEventArgs e)
         {
             string easy = "easy";
-            Window1 w1 = new Window1(easy);
+            Buy w1 = new Buy(easy);
             w1.Show();
             this.Close();
         }
@@ -35,7 +35,7 @@ namespace binary_game
         private void Medium_Click(object sender, RoutedEventArgs e)
         {
             string easy = "medium";
-            Window1 w1 = new Window1(easy);
+            Buy w1 = new Buy(easy);
             w1.Show();
             this.Close();
         }
@@ -43,7 +43,15 @@ namespace binary_game
         private void Hard_Click(object sender, RoutedEventArgs e)
         {
             string easy = "hard";
-            Window1 w1 = new Window1(easy);
+            Buy w1 = new Buy(easy);
+            w1.Show();
+            this.Close();
+        }
+
+        private void Insane_Click(object sender, RoutedEventArgs e)
+        {
+            string easy = "insane";
+            Buy w1 = new Buy(easy);
             w1.Show();
             this.Close();
         }

@@ -23,18 +23,24 @@ namespace binary_game
     /// </summary>
     public partial class Window1 : Window
     {
+        bool[] Equipment = new bool[6];
         int quest = 0;
         int score = 0;
-        int Total_Time = 0;
         private SoundPlayer player;
         private MediaPlayer Blow = new MediaPlayer();
         int seconds = 0;
+        int seconds2 = 0;
         int timer = 0;
         string diff = "";
         string Answer = "";
         bool _timerStatus = false;
         DispatcherTimer _dt = null;
-        public Window1(string difficulty)
+        int ECM = 0;
+        int laptop = 0;
+        int kit = 0;
+        int helmet = 0;
+        int kevlar = 0;
+        public Window1(string difficulty, bool[] equip)
         {
             InitializeComponent();
             diff = difficulty;
@@ -42,13 +48,28 @@ namespace binary_game
                 seconds = 60;
             else if (difficulty == "medium")
                 seconds = 45;
-            else if (difficulty == "hard")
+            else if (difficulty == "hard" || difficulty == "insane")
                 seconds = 30;
+            Equipment = equip;
+            if (Equipment[1] == true)
+                kevlar = 3;
+            if (Equipment[2] == true)
+                ECM = 11;
+            if (Equipment[3] == true)
+                laptop = 11;
+            if (Equipment[4] == true)
+            {
+                kit = seconds / 10;
+                seconds = seconds + kit;
+            }
+            seconds2 = seconds;
+            if (Equipment[5] == true)
+                helmet = 5;
             timer = seconds;
-            Blow.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\blow.wav"));
-            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\GameStart.wav");
+            Blow.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\blow.wav"));
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\GameStart.wav");
             player.Play();
-            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\beep.wav");
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\beep.wav");
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
             _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
@@ -59,12 +80,12 @@ namespace binary_game
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
             timer--;
             score++;
-            Total_Time ++;
             player.Play();
-            if(diff == "medium" ||  diff == "hard")
+            if(diff == "medium" ||  diff == "hard" || diff == "insane")
             {
+
                 Random rnd = new Random();
-                int chance = rnd.Next(1, 101);
+                int chance = rnd.Next(1, 101) -ECM;
                 Question.Content = quest;
                 Label128.Opacity = 100;
                 Label64.Opacity = 100;
@@ -85,11 +106,15 @@ namespace binary_game
                     Label2.Opacity = 0;
                     Label1.Opacity = 0;
                 }
-                if(diff == "hard")
+                if(diff == "hard" || diff == "insane")
                 {
                     chance = rnd.Next(1, 101);
                     if(chance > 66)
                         Question.Content = "error";
+                }
+                if(diff == "insane")
+                {
+                    Bitwise();
                 }
                     
             }
@@ -103,8 +128,17 @@ namespace binary_game
                 Blow.Play();
             else if (timer == 0)
             {
-                MessageBox.Show("You lose");
-                this.Close();
+                if (kevlar > 0)
+                {
+                    timer = seconds2;
+                    kevlar--;
+                    Start();
+                }
+                else
+                {
+                    MessageBox.Show("You lose");
+                    this.Close();
+                }
             }
             lblTimerDisplay.Content = timer.ToString();
         }
@@ -179,14 +213,17 @@ namespace binary_game
             if (binarystring == Answer)
             {
                 if (timer != seconds /3)
-                    timer -= 2;
-                score += 30;
+                {
+                    seconds2 -= 2;
+                    timer -= seconds2;
+                    
+                }
+                score += 1;
                 Start();
             }
             else
             {
                 MessageBox.Show("wrong");
-                this.Close();
             }
         }
 
@@ -284,6 +321,25 @@ namespace binary_game
             {
                 Label1.Content = "0";
             }
+        }
+        private void Bitwise()
+        {
+            Label[] labels = new Label[] { Label128, Label64, Label32, Label16, Label8, Label4, Label2, Label1 };
+            Random rnd = new Random();
+            int chance = rnd.Next(1, 101) - helmet;
+            if(chance > 90)
+            {
+                int index = rnd.Next(0, labels.Length);
+                if (labels[index].Content == "0")
+                {
+                    labels[index].Content = "1";
+                }
+                else if (labels[index].Content == "1")
+                {
+                    labels[index].Content = "0";
+                }
+            }
+
         }
     }
 }

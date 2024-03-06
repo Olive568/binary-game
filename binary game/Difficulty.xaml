@@ -9,10 +9,11 @@
         Title="Difficulty" Height="400" Width="300">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\Diff.PNG"/>
+            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Diff.PNG"/>
         </Grid.Background>
-        <Button Content="Button" Name="Easy" HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Height="59" Width="159" Opacity="0" Click="Easy_Click"/>
-        <Button Content="Button" Name="Medium" HorizontalAlignment="Center" Margin="0,167,0,0" VerticalAlignment="Top" Height="62" Width="160" Opacity="0" Click="Medium_Click"/>
-        <Button Content="Button" Name="Hard" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Height="62" Width="160" Opacity="0" Click="Hard_Click"/>
+        <Button Content="Button" Name="Easy" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Height="59" Width="160" Opacity="0" Click="Easy_Click"/>
+        <Button Content="Button" Name="Medium" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Height="59" Width="160" Opacity="0" Click="Medium_Click"/>
+        <Button Content="Button" Name="Hard" HorizontalAlignment="Center" Margin="0,194,0,0" VerticalAlignment="Top" Height="58" Width="160" Opacity="0" Click="Hard_Click"/>
+        <Button Content="Button" x:Name="Insane" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Height="58" Width="160" Opacity="0" Click="Insane_Click"/>
     </Grid>
 </Window>
