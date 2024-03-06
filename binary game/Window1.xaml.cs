@@ -28,6 +28,7 @@ namespace binary_game
         int score = 0;
         private SoundPlayer player;
         private MediaPlayer Blow = new MediaPlayer();
+        private MediaPlayer Glock = new MediaPlayer();
         int seconds = 0;
         int seconds2 = 0;
         int timer = 0;
@@ -41,6 +42,7 @@ namespace binary_game
         int helmet = 0;
         int kevlar = 0;
         int Pistol = 0;
+        bool hit = false;
         public Window1(string difficulty, bool[] equip)
         {
             InitializeComponent();
@@ -52,10 +54,6 @@ namespace binary_game
             else if (difficulty == "hard" || difficulty == "insane")
                 seconds = 30;
             Equipment = equip;
-            if (Equipment[0] == true)
-            {
-                Pistol = 4;
-            }
             if (Equipment[1] == true)
                 kevlar = 3;
             if (Equipment[2] == true)
@@ -86,20 +84,21 @@ namespace binary_game
             timer--;
             score++;
             player.Play();
-            if(diff == "medium" ||  diff == "hard" || diff == "insane")
+            Question.Content = quest;
+            Label128.Opacity = 100;
+            Label64.Opacity = 100;
+            Label32.Opacity = 100;
+            Label16.Opacity = 100;
+            Label8.Opacity = 100;
+            Label4.Opacity = 100;
+            Label2.Opacity = 100;
+            Label1.Opacity = 100;
+            if (diff == "medium" ||  diff == "hard" || diff == "insane" && hit == false)
             {
-
+                
                 Random rnd = new Random();
                 int chance = rnd.Next(1, 101) -ECM;
-                Question.Content = quest;
-                Label128.Opacity = 100;
-                Label64.Opacity = 100;
-                Label32.Opacity = 100;
-                Label16.Opacity = 100;
-                Label8.Opacity = 100;
-                Label4.Opacity = 100;
-                Label2.Opacity = 100;
-                Label1.Opacity = 100;
+
                 if (chance > 66)
                 {
                     Label128.Opacity = 0;
@@ -152,10 +151,17 @@ namespace binary_game
         {
             SubmitBtn.IsEnabled = true;
             SubmitBtn.Visibility = Visibility.Visible;
+            if (Equipment[0] == true)
+            {
+                Pistol = 4;
+                Shooting.IsEnabled = true;
+                Target.Opacity = 100;
+            }
             Start();
         }
         private void Start()
         {
+            hit = false;
             Label128.Content = "0";
             Label64.Content = "0";
             Label32.Content = "0";
@@ -345,6 +351,22 @@ namespace binary_game
                 }
             }
 
+        }
+
+        private void Button_Click_Shoot(object sender, RoutedEventArgs e)
+        {
+            if(Pistol > 0) 
+            {
+                Pistol -= 1;
+                hit = true;
+                timer += 6;
+                Glock.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Glock.wav"));
+                Glock.Play();
+            }
+            if(Pistol == 0)
+            {
+                Target.Opacity = 0;
+            }
         }
     }
 }
