@@ -32,7 +32,7 @@ namespace binary_game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             player.Stop();
-            Window1 w1 = new Window1();
+            Difficulty w1 = new Difficulty();
             w1.Show();
             this.Close();
 

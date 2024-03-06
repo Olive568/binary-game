@@ -55,12 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database.cs" />
+    <Compile Include="Difficulty.xaml.cs">
+      <DependentUpon>Difficulty.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Leaderboards.xaml.cs">
       <DependentUpon>Leaderboards.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Difficulty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Leaderboards.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

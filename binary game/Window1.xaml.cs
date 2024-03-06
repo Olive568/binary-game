@@ -23,15 +23,27 @@ namespace binary_game
     /// </summary>
     public partial class Window1 : Window
     {
+        int score = 0;
+        int Total_Time = 0;
         private SoundPlayer player;
         private MediaPlayer Blow = new MediaPlayer();
-        int seconds = 32;
+        int seconds = 0;
+        int timer = 0;
+        string diff = "";
         string Answer = "";
         bool _timerStatus = false;
         DispatcherTimer _dt = null;
-        public Window1()
+        public Window1(string difficulty)
         {
             InitializeComponent();
+            diff = difficulty;
+            if (difficulty == "easy")
+                seconds = 60;
+            else if (difficulty == "medium")
+                seconds = 45;
+            else if (difficulty == "hard")
+                seconds = 30;
+            timer = seconds;
             Blow.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\blow.wav"));
             player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\GameStart.wav");
             player.Play();
@@ -42,23 +54,50 @@ namespace binary_game
         }
         private void _dt_Tick(object sender, EventArgs e)
         {
+            
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
-            sec--;
+            timer--;
+            score++;
+            Total_Time ++;
             player.Play();
-            if(sec > 10)
-                lblTimerDisplay.Foreground = Brushes.Black;
-            if (sec == 10)
+            if(diff == "medium" ||  diff == "hard")
             {
-                
+                Random rnd = new Random();
+                int chance = rnd.Next(1, 101);
+                Label128.Opacity = 100;
+                Label64.Opacity = 100;
+                Label32.Opacity = 100;
+                Label16.Opacity = 100;
+                Label8.Opacity = 100;
+                Label4.Opacity = 100;
+                Label2.Opacity = 100;
+                Label1.Opacity = 100;
+                if (chance > 66)
+                {
+                    Label128.Opacity = 0;
+                    Label64.Opacity = 0;
+                    Label32.Opacity = 0;
+                    Label16.Opacity = 0;
+                    Label8.Opacity = 0;
+                    Label4.Opacity = 0;
+                    Label2.Opacity = 0;
+                    Label1.Opacity = 0;
+                }
+            }
+            if(timer > 10)
+                lblTimerDisplay.Foreground = Brushes.Black;
+            if (timer == 10)
+            {
                 lblTimerDisplay.Foreground = Brushes.Red;
             }
-            else if(sec == 6)
+            else if(timer == 6)
                 Blow.Play();
-            else if (sec == 0)
+            else if (timer == 0)
             {
                 MessageBox.Show("You lose");
+                this.Close();
             }
-            lblTimerDisplay.Content = sec.ToString();
+            lblTimerDisplay.Content = timer.ToString();
         }
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
@@ -77,8 +116,6 @@ namespace binary_game
             Label4.Content = "0";
             Label2.Content = "0";
             Label1.Content = "0";
-            if (seconds != 10)
-                seconds -= 2;
             lblTimerDisplay.Content = seconds;
             GenerateNumber();
             StartBtn.Visibility = Visibility.Hidden;
@@ -131,11 +168,15 @@ namespace binary_game
             binarystring += Label1.Content;
             if (binarystring == Answer)
             {
+                if (timer != seconds /3)
+                    timer -= 2;
+                score += 30;
                 Start();
             }
             else
             {
                 MessageBox.Show("wrong");
+                this.Close();
             }
         }
 
@@ -232,17 +273,6 @@ namespace binary_game
             else if (Label1.Content == "1")
             {
                 Label1.Content = "0";
-            }
-        }
-        private void Add_To_Leaderboard()
-        {
-            List<string[]> db = new List<string[]>();
-            using (StreamReader sr = new StreamReader(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Scores.csv"))
-            {
-                string line = sr.ReadLine();
-                while ((line = sr.ReadLine()) != null)
-                {
-                }
             }
         }
     }

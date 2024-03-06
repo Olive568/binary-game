@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Leaderboards" Height="500" Width="350">
     <Grid>
         <Grid.Background>

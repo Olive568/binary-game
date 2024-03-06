@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Window1" Height="365" Width="620">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,7 +15,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\GameImage.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
         </Grid.Background>
-        <Label x:Name="lblTimerDisplay" Content="30" HorizontalAlignment="Left" Margin="271,28,0,0" VerticalAlignment="Top" 
+        <Label x:Name="lblTimerDisplay" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="271,28,0,0" VerticalAlignment="Top" 
                FontSize="48" FontWeight="Bold" FontFamily="Courier New" Opacity="0.75"/>
         <Button Content="Start" Name="StartBtn" HorizontalAlignment="Left" Margin="271,242,0,0" VerticalAlignment="Top" Click="StartBtn_Click" RenderTransformOrigin="-2.312,1.572" Height="24" Width="61" Background="{x:Null}" BorderThickness="0,0,0,0"/>
 
