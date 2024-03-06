@@ -40,6 +40,7 @@ namespace binary_game
         int kit = 0;
         int helmet = 0;
         int kevlar = 0;
+        int Pistol = 0;
         public Window1(string difficulty, bool[] equip)
         {
             InitializeComponent();
@@ -51,6 +52,10 @@ namespace binary_game
             else if (difficulty == "hard" || difficulty == "insane")
                 seconds = 30;
             Equipment = equip;
+            if (Equipment[0] == true)
+            {
+                Pistol = 4;
+            }
             if (Equipment[1] == true)
                 kevlar = 3;
             if (Equipment[2] == true)
@@ -215,7 +220,7 @@ namespace binary_game
                 if (timer != seconds /3)
                 {
                     seconds2 -= 2;
-                    timer -= seconds2;
+                    timer = seconds2;
                     
                 }
                 score += 1;
