@@ -143,7 +143,7 @@ namespace binary_game
                 }
                 else
                 {
-                    Window2 w2 = new Window2(score);
+                    Window2 w2 = new Window2(score.ToString());
                     MessageBox.Show("You lose");
                     w2.Show();
                     this.Close();
