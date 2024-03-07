@@ -47,7 +47,7 @@ namespace binary_game
             ScoreDisplay.Text = point;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {  
             Database DB = new Database();
             List <string[]> db = DB.Read_File();

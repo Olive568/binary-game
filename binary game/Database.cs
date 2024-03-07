@@ -12,9 +12,9 @@ namespace binary_game
         public List<string[]> Read_File()
         {
             List<string[]> db = new List<string[]>();
-            using (StreamReader sr = new StreamReader(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Scores.csv"))
+            using (StreamReader sr = new StreamReader(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Scores.csv"))
             {
-                string line = sr.ReadLine();
+                string line = "";
                 while ((line = sr.ReadLine()) != null)
                 {
                     string[] splitter = new string[3];
@@ -28,33 +28,34 @@ namespace binary_game
         {
             if (db.Count > 2)
             {
-                for (int x = 1; x < db.Count; x++)
+                for (int x = 1; x < db.Count - 1; x++)
                 {
-                    for (int y = 1; y < db.Count - 1; y++)
+                    for (int y = 1; y < db.Count - x; y++)
                     {
-                        string[] temp = db[y];
                         if (int.Parse(db[y][2]) < int.Parse(db[y + 1][2]))
                         {
+                            string[] temp = db[y];
                             db[y] = db[y + 1];
                             db[y + 1] = temp;
                         }
                     }
                 }
+
             }
-            while(db.Count > 11)
+            while (db.Count > 11)
             {
                 db.RemoveAt(10);
             }
-            using(StreamWriter sw = new StreamWriter(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Scores.csv"))
+            using(StreamWriter sw = new StreamWriter(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Scores.csv"))
             {
                 //clearing the contents first 
                 //placing the content 
                 //overwriting 
-                foreach (string[] user in db)
+                for(int i = 0; i < db.Count; i++) 
                 {
-                    sw.WriteLine(string.Join(",", user));
-                    sw.WriteLine();
+                    sw.WriteLine(string.Join(",", db[i]));
                 }
+
             }
         }
     }
