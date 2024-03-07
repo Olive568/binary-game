@@ -35,6 +35,7 @@ namespace binary_game
             array[1] = name.Text;
             array[2] = point;
             DB.Add_Ranking(db);
+            this.Close();
 
         }
     }
