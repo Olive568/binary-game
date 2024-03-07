@@ -42,7 +42,7 @@ namespace binary_game
                 scoring *= 3;
                 point = scoring.ToString();
             }
-            else if (difficulty == "hard")
+            else if (difficulty == "insane")
             {
                 int scoring = int.Parse(point);
                 scoring *= 4;
