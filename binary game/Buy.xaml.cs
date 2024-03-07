@@ -34,7 +34,7 @@ namespace binary_game
         public Buy(string dificulty)
         {
             InitializeComponent();
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\BuySound.wav");
+            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\BuySound.wav");
             player.Play();
             diff =dificulty;
         }
@@ -47,10 +47,10 @@ namespace binary_game
         }
         private void Pistol_Click(object sender, RoutedEventArgs e)
         {
-            if(money >= 300)
+            if(money >= 200)
             {
                 equipment[0] = true;
-                money -= 300;
+                money -= 200;
                 Cash.Text = money.ToString();
             }
             Pistol.IsEnabled = false;
@@ -82,10 +82,10 @@ namespace binary_game
 
         private void Laptop_Click(object sender, RoutedEventArgs e)
         {
-            if (money >= 100)
+            if (money >= 200)
             {
                 equipment[3] = true;
-                money -= 100;
+                money -= 200;
                 Cash.Text = money.ToString();
             }
             Laptop.IsEnabled = false;

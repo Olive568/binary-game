@@ -9,28 +9,28 @@
         Title="Buy" Height="400" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Store.PNG"/>
+            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\Store.PNG"/>
         </Grid.Background>
         <Rectangle HorizontalAlignment="Left" Height="72" Margin="131,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
         <Rectangle HorizontalAlignment="Left" Height="72" Margin="131,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
-        <Rectangle HorizontalAlignment="Left" Height="72" Margin="131,209,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
-        <Rectangle HorizontalAlignment="Left" Height="72" Margin="472,209,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="72" Margin="131,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="72" Margin="472,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
         <Rectangle HorizontalAlignment="Left" Height="72" Margin="472,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
         <Rectangle HorizontalAlignment="Left" Height="72" Margin="472,43,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
-        <TextBlock HorizontalAlignment="Left" Margin="140,49,0,0" Text="M17 pistol. When shot disables all interferences and increases time by 6 seconds. 4 shots. $300" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,49,0,0" Text="M17 pistol. When shot disables all interferences and increases time by 6 seconds. 4 shots. $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
         <TextBlock HorizontalAlignment="Left" Margin="140,131,0,0" Text="Kevlar. grants a new life. 3 charges . $600" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
-        <TextBlock HorizontalAlignment="Left" Margin="140,220,0,0" Text="ECM jammer. reduces the chance of Radio interferance to the bit display by 33%. $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
-        <TextBlock HorizontalAlignment="Left" Margin="479,49,0,0" Text="Toughbook. reduces the chance of Radio interference to the question display by 33% $100" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,215,0,0" Text="ECM jammer. reduces the chance of Radio interferance to the bit display by 33%. $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
+        <TextBlock HorizontalAlignment="Left" Margin="479,49,0,0" Text="Toughbook. reduces the chance of Radio interference to the question display by 33%. number Guide enabled $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="64" Width="186"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,131,0,0" Text="Defuse kit. increases timer by 10% $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
-        <TextBlock HorizontalAlignment="Left" Margin="479,220,0,0" Text="Helmet. decreases the chance of a bitwise shift by 50%. $400" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
+        <TextBlock HorizontalAlignment="Left" Margin="479,215,0,0" Text="Helmet. decreases the chance of a bitwise shift by 50%. $400" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
         <Button Content="Start" HorizontalAlignment="Left" Margin="531,306,0,0" VerticalAlignment="Top" Height="46" Width="174" Background="#FFE20F0F" Foreground="#FF28D83B" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Left" Name="Cash" Margin="156,296,0,0" FontSize="50" TextWrapping="Wrap" Text="800" VerticalAlignment="Top" Foreground="White" Height="60" Width="182"/>
         <TextBlock HorizontalAlignment="Left" Margin="131,295,0,0" FontSize="50" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Foreground="White" Height="60" Width="27"/>
         <Button Content="Buy" Name="Pistol" HorizontalAlignment="Left" Margin="324,64,0,0" VerticalAlignment="Top" Click="Pistol_Click"/>
         <Button Content="Buy" Name="Kevlar" HorizontalAlignment="Left" Margin="324,146,0,0" VerticalAlignment="Top" Click="Kevlar_Click"/>
-        <Button Content="Buy" Name="ECM" HorizontalAlignment="Left" Margin="324,235,0,0" VerticalAlignment="Top" Click="ECM_Click"/>
+        <Button Content="Buy" Name="ECM" HorizontalAlignment="Left" Margin="324,230,0,0" VerticalAlignment="Top" Click="ECM_Click"/>
         <Button Content="Buy" Name="Laptop" HorizontalAlignment="Left" Margin="670,64,0,0" VerticalAlignment="Top" Click="Laptop_Click"/>
         <Button Content="Buy" Name="Kit" HorizontalAlignment="Left" Margin="670,146,0,0" VerticalAlignment="Top" Click="Kit_Click"/>
-        <Button Content="Buy" Name="Helmet" HorizontalAlignment="Left" Margin="670,235,0,0" VerticalAlignment="Top" Click="Helmet_Click"/>
+        <Button Content="Buy" Name="Helmet" HorizontalAlignment="Left" Margin="670,230,0,0" VerticalAlignment="Top" Click="Helmet_Click"/>
     </Grid>
 </Window>

@@ -17,7 +17,7 @@ namespace binary_game
                 string line = sr.ReadLine();
                 while ((line = sr.ReadLine()) != null)
                 {
-                    string[] splitter = new string[4];
+                    string[] splitter = new string[3];
                     splitter = line.Split(',');
                     db.Add(splitter);
                 }
