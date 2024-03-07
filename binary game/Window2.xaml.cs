@@ -19,15 +19,35 @@ namespace binary_game
     /// </summary>
     public partial class Window2 : Window
     {
+        string difficulty;
         string point = "";
-        public Window2(string score)
+        public Window2(string score, string diff)
         {
             InitializeComponent();
+            difficulty = diff;
             point = score;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(difficulty == "medium")
+            {
+                int scoring = int.Parse(point);
+                scoring *= 2;
+                point = scoring.ToString();
+            }
+            else if (difficulty == "hard")
+            {
+                int scoring = int.Parse(point);
+                scoring *= 3;
+                point = scoring.ToString();
+            }
+            else if (difficulty == "hard")
+            {
+                int scoring = int.Parse(point);
+                scoring *= 4;
+                point = scoring.ToString();
+            }
             Database DB = new Database();
             List <string[]> db = DB.Read_File();
             string[] array = new string[3];
