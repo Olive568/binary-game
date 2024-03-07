@@ -26,11 +26,11 @@ namespace binary_game
         }
         public void Add_Ranking(List<string[]> db)
         {
-            if (db.Count > 1)
+            if (db.Count > 2)
             {
-                for (int x = 0; x < db.Count; x++)
+                for (int x = 1; x < db.Count; x++)
                 {
-                    for (int y = 0; y < db.Count - 1; y++)
+                    for (int y = 1; y < db.Count - 1; y++)
                     {
                         string[] temp = db[y];
                         if (int.Parse(db[y][2]) < int.Parse(db[y + 1][2]))
@@ -41,21 +41,18 @@ namespace binary_game
                     }
                 }
             }
-            while(db.Count > 11);
+            while(db.Count > 11)
             {
                 db.RemoveAt(10);
             }
-            using(StreamWriter sw = new StreamWriter("Scores.csv"))
+            using(StreamWriter sw = new StreamWriter(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Scores.csv"))
             {
+                //clearing the contents first 
+                //placing the content 
+                //overwriting 
                 foreach (string[] user in db)
                 {
-                    for(int x = 0; x < user.Length -1; x++) 
-                    {
-                        if(x == 3)
-                        sw.Write(user[x]);
-                        else
-                            sw.Write(user[x]+",");
-                    }
+                    sw.WriteLine(string.Join(",", user));
                     sw.WriteLine();
                 }
             }

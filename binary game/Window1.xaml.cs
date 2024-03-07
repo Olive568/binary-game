@@ -85,7 +85,6 @@ namespace binary_game
             
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
             timer--;
-            score++;
             player.Play();
             Question.Content = quest;
             Label128.Opacity = 100;
@@ -143,10 +142,12 @@ namespace binary_game
                 }
                 else
                 {
+                    player.Stop();
                     Window2 w2 = new Window2(score.ToString(),diff);
-                    MessageBox.Show("You lose");
-                    w2.Show();
                     this.Close();
+                    _dt.Stop();
+                    MessageBox.Show("You lose");
+                    w2.Show();        
                 }
             }
             lblTimerDisplay.Content = timer.ToString();

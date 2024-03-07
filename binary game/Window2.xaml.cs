@@ -26,11 +26,7 @@ namespace binary_game
             InitializeComponent();
             difficulty = diff;
             point = score;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(difficulty == "medium")
+            if (difficulty == "medium")
             {
                 int scoring = int.Parse(point);
                 scoring *= 2;
@@ -48,12 +44,18 @@ namespace binary_game
                 scoring *= 4;
                 point = scoring.ToString();
             }
+            ScoreDisplay.Text = point;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {  
             Database DB = new Database();
             List <string[]> db = DB.Read_File();
             string[] array = new string[3];
             array[0] = db.Count().ToString();
             array[1] = name.Text;
             array[2] = point;
+            db.Add(array);
             DB.Add_Ranking(db);
             this.Close();
 
