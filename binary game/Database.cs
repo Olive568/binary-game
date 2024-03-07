@@ -28,9 +28,10 @@ namespace binary_game
         {
             if (db.Count > 2)
             {
-                for (int x = 1; x < db.Count - 1; x++)
+                // Sort the list based on the scores
+                for (int x = 0; x < db.Count - 1; x++)
                 {
-                    for (int y = 1; y < db.Count - x; y++)
+                    for (int y = 0; y < db.Count - x - 1; y++)
                     {
                         if (int.Parse(db[y][2]) < int.Parse(db[y + 1][2]))
                         {
@@ -41,12 +42,18 @@ namespace binary_game
                     }
                 }
 
+                // Update the ranks based on the sorted position
+                for (int i = 0; i < db.Count; i++)
+                {
+                    db[i][0] = (i + 1).ToString(); // Update rank
+                }
             }
+
             while (db.Count > 11)
             {
                 db.RemoveAt(10);
             }
-            using(StreamWriter sw = new StreamWriter(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Scores.csv"))
+            using (StreamWriter sw = new StreamWriter(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Scores.csv"))
             {
                 //clearing the contents first 
                 //placing the content 

@@ -21,11 +21,14 @@ namespace binary_game
     {
         string difficulty;
         string point = "";
-        public Window2(string score, string diff)
+        int minutes = 0;
+        int seconds = 0;
+        public Window2(string score, string diff,int time)
         {
             InitializeComponent();
             difficulty = diff;
             point = score;
+            seconds = time;
             if (difficulty == "medium")
             {
                 int scoring = int.Parse(point);
@@ -45,16 +48,19 @@ namespace binary_game
                 point = scoring.ToString();
             }
             ScoreDisplay.Text = point;
+            minutes = seconds / 60;
+            seconds %= 60;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {  
+            string time = minutes +": " + seconds.ToString();
             Database DB = new Database();
             List <string[]> db = DB.Read_File();
             string[] array = new string[3];
-            array[0] = db.Count().ToString();
-            array[1] = name.Text;
-            array[2] = point;
+            array[0] = name.Text;
+            array[1] = point;
+            array[2] = time;
             db.Add(array);
             DB.Add_Ranking(db);
             this.Close();

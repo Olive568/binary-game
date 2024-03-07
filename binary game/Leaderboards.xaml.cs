@@ -19,9 +19,32 @@ namespace binary_game
     /// </summary>
     public partial class Leaderboards : Window
     {
+        List<string[]> db = new List<string[]>();
         public Leaderboards()
         {
             InitializeComponent();
+            Database DB = new Database();
+            db = DB.Read_File();
+            LstBox.Items.Add(db[0][0] + "         "  + db[0][1] + "              " + db[0][2]);
+            for(int x = 1; x < db.Count; x++)
+            {
+                string person = "";
+                for(int y = 0; y < db[x].Length; y++)
+                {
+                    if (y == 0 && db[x][y].Length > 6)
+                    {
+                        person += db[x][y] + "\t";
+                    }
+                    else
+                    {
+                        person += db[x][y] + "\t" + "    ";
+                    }
+                    
+                    
+                }
+                LstBox.Items.Add($"{person}");
+            }
+ 
         }
     }
 }

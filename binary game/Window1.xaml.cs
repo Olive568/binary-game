@@ -32,6 +32,7 @@ namespace binary_game
         int seconds = 0;
         int seconds2 = 0;
         int timer = 0;
+        int total_time = 0;
         string diff = "";
         string Answer = "";
         bool _timerStatus = false;
@@ -85,6 +86,7 @@ namespace binary_game
             
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
             timer--;
+            total_time++;
             player.Play();
             Question.Content = quest;
             Label128.Opacity = 100;
@@ -143,7 +145,7 @@ namespace binary_game
                 else
                 {
                     player.Stop();
-                    Window2 w2 = new Window2(score.ToString(),diff);
+                    Window2 w2 = new Window2(score.ToString(),diff,total_time);
                     this.Close();
                     _dt.Stop();
                     MessageBox.Show("You lose");
