@@ -23,6 +23,7 @@ namespace binary_game
         public Window2(string score)
         {
             InitializeComponent();
+            point = score;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,7 +33,8 @@ namespace binary_game
             string[] array = new string[3];
             array[0] = db.Count().ToString();
             array[1] = name.Text;
-            arra
+            array[2] = point;
+            DB.Add_Ranking(db);
 
         }
     }
