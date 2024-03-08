@@ -14,7 +14,7 @@
         <ListBox Name="LstBox" Margin="68,78,68,85" Background="{x:Null}" BorderBrush="{x:Null}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" FontFamily="file:///C:/Users/22-0042c/source/repos/binary-game/binary game/Tech.ttf" FontSize="16"/>
+                    <TextBlock Text="{Binding}" FontFamily="file:///C:/Users/22-0042c/source/repos/binary-game/binary game/Tech.ttf" FontSize="12"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

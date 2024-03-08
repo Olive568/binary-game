@@ -33,19 +33,22 @@ namespace binary_game
                 {
                     for (int y = 0; y < db.Count - x - 1; y++)
                     {
-                        if (int.Parse(db[y][2]) < int.Parse(db[y + 1][2]))
+                        int score1, score2;
+                        if (int.TryParse(db[y][1], out score1) && int.TryParse(db[y + 1][1], out score2))
                         {
-                            string[] temp = db[y];
-                            db[y] = db[y + 1];
-                            db[y + 1] = temp;
+                            if (score1 < score2)
+                            {
+                                // Swap elements
+                                string[] temp = db[y];
+                                db[y] = db[y + 1];
+                                db[y + 1] = temp;
+                            }
+                        }
+                        else
+                        {
+                            continue;
                         }
                     }
-                }
-
-                // Update the ranks based on the sorted position
-                for (int i = 0; i < db.Count; i++)
-                {
-                    db[i][0] = (i + 1).ToString(); // Update rank
                 }
             }
 

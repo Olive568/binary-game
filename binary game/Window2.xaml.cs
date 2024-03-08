@@ -52,9 +52,9 @@ namespace binary_game
             seconds %= 60;
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {  
-            string time = minutes +": " + seconds.ToString();
+            string time = minutes +":" + seconds.ToString();
             Database DB = new Database();
             List <string[]> db = DB.Read_File();
             string[] array = new string[3];
