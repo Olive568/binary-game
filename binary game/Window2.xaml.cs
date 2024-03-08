@@ -58,8 +58,16 @@ namespace binary_game
             Database DB = new Database();
             List <string[]> db = DB.Read_File();
             string[] array = new string[3];
-            array[0] = name.Text;
-            array[1] = point;
+            if(name.Text.Length < 6) 
+            {
+                array[0] = name.Text  + "     ";
+                array[1] = point + "     ";
+            }
+            else
+            {
+                array[0] = name.Text;
+                array[1] = point;
+            }
             array[2] = time;
             db.Add(array);
             DB.Add_Ranking(db);
