@@ -73,10 +73,10 @@ namespace binary_game
             if (Equipment[5] == true)
                 helmet = 5;
             timer = seconds;
-            Blow.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\blow.wav"));
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\GameStart.wav");
+            Blow.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\blow.wav"));
+            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\GameStart.wav");
             player.Play();
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\beep.wav");
+            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\beep.wav");
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
             _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
@@ -368,7 +368,7 @@ namespace binary_game
                 Pistol -= 1;
                 hit = true;
                 timer += 6;
-                Glock.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Glock.wav"));
+                Glock.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Glock.wav"));
                 Glock.Play();
             }
             if(Pistol == 0)
