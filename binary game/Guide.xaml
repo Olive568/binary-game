@@ -1,0 +1,15 @@
+﻿<Window x:Class="binary_game.Guide"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:binary_game"
+        mc:Ignorable="d"
+        Title="Guide" Height="500" Width="300">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Guide.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+        </Grid.Background>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="44,399,0,0" VerticalAlignment="Top" Height="47" Width="199" Opacity="0" Click="Button_Click"/>
+    </Grid>
+</Window>

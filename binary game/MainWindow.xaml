@@ -23,6 +23,9 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Ellipse HorizontalAlignment="Left" Height="45" Margin="10,308,0,0" Stroke="#FF41DCCA" VerticalAlignment="Top" Width="46" Fill="#FF41DCCA"/>
+        <Label Content="?"  FontSize="30" HorizontalAlignment="Left" Margin="21,305,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" Height="47" Width="49" Click="Button_Click_2" Opacity="0"/>
     </Grid>
 
 </Window>
