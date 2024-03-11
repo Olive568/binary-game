@@ -8,7 +8,7 @@
         Title="Add_to_leaderboard" Height="400" Width="300">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\ScoreImage.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\ScoreImage.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
         </Grid.Background>
         <TextBox HorizontalAlignment="Center" Name="name" TextWrapping="Wrap" Text="TextBox" FontSize="30" VerticalAlignment="Top" Width="262" Height="37" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,170,0,0"/>
         <TextBlock HorizontalAlignment="Center" Name="ScoreDisplay" Margin="0,66,0,0" TextWrapping="Wrap" FontSize="36" TextAlignment="Center" Text="X" VerticalAlignment="Top" Width="68"/>

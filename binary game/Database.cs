@@ -12,7 +12,7 @@ namespace binary_game
         public List<string[]> Read_File()
         {
             List<string[]> db = new List<string[]>();
-            using (StreamReader sr = new StreamReader(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Scores.csv"))
+            using (StreamReader sr = new StreamReader(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Scores.csv"))
             {
                 string line = "";
                 while ((line = sr.ReadLine()) != null)
@@ -56,7 +56,7 @@ namespace binary_game
             {
                 db.RemoveAt(10);
             }
-            using (StreamWriter sw = new StreamWriter(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Scores.csv"))
+            using (StreamWriter sw = new StreamWriter(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Scores.csv"))
             {
                 //clearing the contents first 
                 //placing the content 
