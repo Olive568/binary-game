@@ -39,24 +39,28 @@ namespace binary_game
         {
             ToggleSwitch(Label64);
             EnableNextSwitch(Switch32);
+            Switch64.IsEnabled = false;
         }
 
         private void Button_Click_Switch32(object sender, RoutedEventArgs e)
         {
             ToggleSwitch(Label32);
             EnableNextSwitch(Switch16);
+            Switch64.IsEnabled = false;
         }
 
         private void Button_Click_Switch16(object sender, RoutedEventArgs e)
         {
             ToggleSwitch(Label16);
             EnableNextSwitch(Switch8);
+            Switch64.IsEnabled = false;
         }
 
         private void Button_Click_Switch8(object sender, RoutedEventArgs e)
         {
             ToggleSwitch(Label8);
             EnableNextSwitch(Switch2);
+            Switch64.IsEnabled = false;
         }
 
         private void Button_Click_Switch4(object sender, RoutedEventArgs e)
@@ -69,12 +73,14 @@ namespace binary_game
         {
             ToggleSwitch(Label2);
             EnableNextSwitch(Switch1);
+            Switch64.IsEnabled = false;
         }
 
         private void Button_Click_Switch1(object sender, RoutedEventArgs e)
         {
             ToggleSwitch(Label1);
             EnableSubmitButton();
+            Switch64.IsEnabled = false;
         }
 
         private void ToggleSwitch(Label label)
