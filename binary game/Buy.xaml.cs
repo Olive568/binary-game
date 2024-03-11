@@ -37,6 +37,14 @@ namespace binary_game
             player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\BuySound.wav");
             player.Play();
             diff =dificulty;
+            if(diff == "medium" || diff == "hard" || diff == "easy")
+            {
+                Helmet.IsEnabled = false;
+                if(diff == "easy")
+                {
+                    ECM.IsEnabled = false;
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
