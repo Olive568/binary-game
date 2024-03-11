@@ -39,22 +39,7 @@ namespace binary_game
                 LstBox.Items.Add($"{person}");
             }
 
-            // Load and apply the font to the ListBox
-            if (File.Exists(fontFilePath))
-            {
-                FontFamily font = new FontFamily(new Uri("file:///" + fontFilePath).AbsoluteUri);
-                foreach (var item in LstBox.Items)
-                {
-                    if (item is TextBlock textBlock)
-                    {
-                        textBlock.FontFamily = font;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Font file not found!");
-            }
+     
         }
     }
 }
