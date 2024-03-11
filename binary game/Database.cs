@@ -28,7 +28,6 @@ namespace binary_game
         {
             if (db.Count > 2)
             {
-                // Sort the list based on the scores
                 for (int x = 0; x < db.Count - 1; x++)
                 {
                     for (int y = 0; y < db.Count - x - 1; y++)
@@ -37,8 +36,7 @@ namespace binary_game
                         if (int.TryParse(db[y][1], out score1) && int.TryParse(db[y + 1][1], out score2))
                         {
                             if (score1 < score2)
-                            {
-                                // Swap elements
+                            { 
                                 string[] temp = db[y];
                                 db[y] = db[y + 1];
                                 db[y + 1] = temp;

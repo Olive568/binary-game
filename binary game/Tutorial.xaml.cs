@@ -99,11 +99,23 @@ namespace binary_game
             string binarystring = $"{Label128.Content}{Label64.Content}{Label32.Content}{Label16.Content}{Label8.Content}{Label4.Content}{Label2.Content}{Label1.Content}";
             if (binarystring == Answer)
             {
-                MessageBox.Show("Correct!");
+                MessageBox.Show("Good job Lieutenant. Get ready for the field");
+                Cutscene ct = new Cutscene();
+                ct.Show();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Wrong answer. Try again!");
+                MessageBox.Show("Wrong answer. Try again Lieutenant!");
+                Label128.Content = 0;
+                Label64.Content = 0;
+                Label32.Content = 0;
+                Label16.Content = 0;
+                Label8.Content = 0;
+                Label4.Content = 0;
+                Label2.Content = 0;
+                Label1.Content = 0;
+                DisableAllSwitchesExcept64();
             }
         }
     }

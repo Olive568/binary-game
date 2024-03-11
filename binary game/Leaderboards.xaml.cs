@@ -14,7 +14,7 @@ namespace binary_game
         public Leaderboards()
         {
             InitializeComponent();
-            string fontFilePath = Path.Combine(Environment.CurrentDirectory, "Tech.ttf");
+            
 
             // Read data from the database
             Database DB = new Database();
