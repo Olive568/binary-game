@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="Cutscene" Height="500" Width="550">
     <Grid>
-        <MediaElement Source="C:\Users\22-0042c\source\repos\binary-game\binary game\Cutscene.MPG" Height="436" VerticalAlignment="Center"/>
+        <MediaElement Source="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Cutscene.MPG" Height="436" VerticalAlignment="Center"/>
         <Button Content="START!" Name="Diff" HorizontalAlignment="Center" Margin="0,376,0,0" VerticalAlignment="Top" Height="48" Width="116" Click="Diff_Click" Background="#FFED0E0E"/>
     </Grid>
 </Window>

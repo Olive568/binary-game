@@ -9,7 +9,7 @@
         Title="Buy" Height="400" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\Store.PNG"/>
+            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Store.PNG"/>
         </Grid.Background>
         <Rectangle HorizontalAlignment="Left" Height="72" Margin="131,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>
         <Rectangle HorizontalAlignment="Left" Height="72" Margin="131,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="233" Fill="Black"/>

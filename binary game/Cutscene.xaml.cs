@@ -27,7 +27,7 @@ namespace binary_game
         public Cutscene()
         {
             InitializeComponent();
-            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Briefing.wav");
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Briefing.wav");
             cut();
         }
         async private void cut()

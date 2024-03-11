@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Media;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace binary_game
@@ -6,10 +7,12 @@ namespace binary_game
     public partial class Tutorial : Window
     {
         string Answer = "01111011";
-
+        private SoundPlayer player;
         public Tutorial()
         {
             InitializeComponent();
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\TutorialVoice.wav");
+            player.Play();
             DisableAllSwitchesExcept64();
         }
 
