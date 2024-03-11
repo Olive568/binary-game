@@ -23,20 +23,26 @@ namespace binary_game
     
     public partial class Cutscene : Window
     {
+        private MediaPlayer Music = new MediaPlayer();
         private SoundPlayer player;
         public Cutscene()
         {
             InitializeComponent();
             player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Briefing.wav");
+            Music.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\CutMusic.wav"));
+       
             cut();
         }
         async private void cut()
         {
+            Music.Volume = 0.25;
+            Music.Play();
             player.Play();   
         }
 
         private void Diff_Click(object sender, RoutedEventArgs e)
         {
+            Music.Stop();
             player.Stop();
             Difficulty df = new Difficulty();
             this.Close();
