@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Tutorial" Height="365" Width="620">
     <Grid Background="Black">
         <Grid.ColumnDefinitions>

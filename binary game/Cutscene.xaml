@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Cutscene" Height="500" Width="550">
     <Grid>
         <MediaElement Source="C:\Users\22-0042c\source\repos\binary-game\binary game\Cutscene.MPG" Height="436" VerticalAlignment="Center"/>
