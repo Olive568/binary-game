@@ -12,7 +12,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Content="123" Name="Question" HorizontalAlignment="Left" Foreground="GreenYellow" Margin="267,83,0,0" FontSize="34" VerticalAlignment="Top"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Name="SubmitBtn" Margin="271,242,0,0" VerticalAlignment="Top" Click="SubmitBtn_Click" IsEnabled="False" Height="24" Width="61" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="{x:Null}"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Name="SubmitBtn" Margin="271,242,0,0" VerticalAlignment="Top" Click="SubmitBtn_Click" IsEnabled="False" Height="24" Width="61" Background="White" BorderThickness="0,0,0,0" BorderBrush="Black"/>
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="26,171,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
         <Label Content="0" FontSize="40" Name="Label128" Foreground="GreenYellow" HorizontalAlignment="Left" Margin="35,162,0,0" VerticalAlignment="Top"/>
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="87,172,0,0" Stroke="ForestGreen" VerticalAlignment="Top" Width="50"/>
