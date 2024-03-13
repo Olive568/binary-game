@@ -24,7 +24,7 @@ namespace binary_game
         public Difficulty()
         {
             InitializeComponent();
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\DiffTheme.wav");
+            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\DiffTheme.wav");
             player.Play();
         }
 
