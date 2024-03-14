@@ -31,15 +31,19 @@ namespace binary_game
                     {
                         person += db[x][y] + "\t";
                     }
+                    else if (y == 0 && db[x][y].Length <= 6) 
+                    {
+                        person += db[x][y] + "\t\t"; 
+                    }
                     else
                     {
-                        person += db[x][y] + "\t" + "    ";
+                        person += db[x][y] + "\t";
                     }
                 }
-                LstBox.Items.Add($"{person}");
+                LstBox.Items.Add(person); 
             }
 
-     
+
         }
     }
 }
