@@ -33,7 +33,7 @@ namespace binary_game
                     }
                     else if (y == 0 && db[x][y].Length <= 6) 
                     {
-                        person += db[x][y] + "\t\t"; 
+                        person += db[x][y] + "\t"; 
                     }
                     else
                     {
