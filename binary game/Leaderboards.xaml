@@ -11,9 +11,14 @@
         <Grid.Background>
             <ImageBrush ImageSource="file:///C:/Users/Luis Oliver/source/repos/binary-game/binary game/LeaderboardScreen.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
         </Grid.Background>
-        <ListBox Name="LstBox" Margin="68,78,68,85" Background="{x:Null}" BorderBrush="{x:Null}">
-            
-        </ListBox>
+        <ListView Name="ListViewLeaderboard" Margin="68,78,68,85" Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Score" DisplayMemberBinding="{Binding Score}"/>
+                    <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Time}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
-
 </Window>
