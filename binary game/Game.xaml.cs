@@ -24,60 +24,60 @@ namespace binary_game
     public partial class Window1 : Window
     {
         bool[] Equipment = new bool[6];
-        int quest = 0;
-        int score = 0;
-        private SoundPlayer player;
+        int Quest = 0;
+        int Score = 0;
+        private SoundPlayer Player;
         private MediaPlayer Blow = new MediaPlayer();
         private MediaPlayer Glock = new MediaPlayer();
         private MediaPlayer Bomb = new MediaPlayer();
-        int seconds = 0;
-        int seconds2 = 0;
-        int timer = 0;
-        int total_time = 0;
-        string diff = "";
+        int Seconds = 0;
+        int Seconds2 = 0;
+        int Timer = 0;
+        int TotalTime = 0;
+        string Diff = "";
         string Answer = "";
         bool _timerStatus = false;
         DispatcherTimer _dt = null;
         int ECM = 0;
-        int laptop = 0;
-        int kit = 0;
-        int helmet = 0;
-        int kevlar = 0;
+        int Laptop = 0;
+        int Kit = 0;
+        int Helmet = 0;
+        int Kevlar = 0;
         int Pistol = 0;
-        bool hit = false;
+        bool Hit = false;
         public Window1(string difficulty, bool[] equip)
         {
             InitializeComponent();
-            diff = difficulty;
+            Diff = difficulty;
             if (difficulty == "easy")
-                seconds = 60;
+                Seconds = 60;
             else if (difficulty == "medium")
-                seconds = 45;
+                Seconds = 45;
             else if (difficulty == "hard" || difficulty == "insane")
-                seconds = 30;
+                Seconds = 30;
             Equipment = equip;
             if (Equipment[1] == true)
-                kevlar = 3;
+                Kevlar = 3;
             if (Equipment[2] == true)
                 ECM = 11;
             if (Equipment[3] == true)
             {
-                laptop = 11;
+                Laptop = 11;
                 Guide.Opacity = 100;
             }
             if (Equipment[4] == true)
             {
-                kit = seconds / 10;
-                seconds = seconds + kit;
+                Kit = Seconds / 10;
+                Seconds = Seconds + Kit;
             }
-            seconds2 = seconds;
+            Seconds2 = Seconds;
             if (Equipment[5] == true)
-                helmet = 5;
-            timer = seconds;
+                Helmet = 5;
+            Timer = Seconds;
             Blow.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\blow.wav"));
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\GameStart.wav");
-            player.Play();
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\beep.wav");
+            Player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\GameStart.wav");
+            Player.Play();
+            Player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\beep.wav");
             Bomb.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Bomb.wav"));
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
@@ -87,10 +87,10 @@ namespace binary_game
         {
             
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
-            timer--;
-            total_time++;
-            player.Play();
-            Question.Content = quest;
+            Timer--;
+            TotalTime++;
+            Player.Play();
+            Question.Content = Quest;
             Label128.Opacity = 100;
             Label64.Opacity = 100;
             Label32.Opacity = 100;
@@ -99,7 +99,7 @@ namespace binary_game
             Label4.Opacity = 100;
             Label2.Opacity = 100;
             Label1.Opacity = 100;
-            if (diff == "medium" ||  diff == "hard" || diff == "insane" && hit == false)
+            if (Diff == "medium" ||  Diff == "hard" || Diff == "insane" && Hit == false)
             {
                 
                 Random rnd = new Random();
@@ -116,46 +116,46 @@ namespace binary_game
                     Label2.Opacity = 0;
                     Label1.Opacity = 0;
                 }
-                if(diff == "hard" || diff == "insane")
+                if(Diff == "hard" || Diff == "insane")
                 {
                     chance = rnd.Next(1, 101);
                     if(chance > 66)
                         Question.Content = "error";
                 }
-                if(diff == "insane")
+                if(Diff == "insane")
                 {
                     Bitwise();
                 }
                     
             }
-            if(timer > 10)
+            if(Timer > 10)
                 lblTimerDisplay.Foreground = Brushes.Black;
-            if (timer == 10)
+            if (Timer == 10)
             {
                 lblTimerDisplay.Foreground = Brushes.Red;
             }
-            else if(timer == 6)
+            else if(Timer == 6)
                 Blow.Play();
-            else if (timer == 0)
+            else if (Timer == 0)
             {
-                if (kevlar > 0)
+                if (Kevlar > 0)
                 {
-                    timer = seconds2;
-                    kevlar--;
+                    Timer = Seconds2;
+                    Kevlar--;
                     Start();
                 }
                 else
                 {
-                    player.Stop();
+                    Player.Stop();
                     Bomb.Play();
-                    Window2 w2 = new Window2(score.ToString(),diff,total_time);
+                    Window2 w2 = new Window2(Score.ToString(),Diff,TotalTime);
                     _dt.Stop();
                     MessageBox.Show("You lose");
                     this.Close();
                     w2.Show();        
                 }
             }
-            lblTimerDisplay.Content = timer.ToString();
+            lblTimerDisplay.Content = Timer.ToString();
         }
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
@@ -172,7 +172,7 @@ namespace binary_game
         }
         private void Start()
         {
-            hit = false;
+            Hit = false;
             Label128.Content = "0";
             Label64.Content = "0";
             Label32.Content = "0";
@@ -181,7 +181,7 @@ namespace binary_game
             Label4.Content = "0";
             Label2.Content = "0";
             Label1.Content = "0";
-            lblTimerDisplay.Content = timer;
+            lblTimerDisplay.Content = Timer;
             GenerateNumber();
             StartBtn.Visibility = Visibility.Hidden;
             //StartBtn.Visibility = Visibility.Visible;
@@ -191,7 +191,7 @@ namespace binary_game
         {
             Random rnd = new Random();
             int number = rnd.Next(1, 256);
-            quest = number;
+            Quest = number;
             string binary = Convert(number);
             Answer = binary;
             Game(number);
@@ -234,13 +234,13 @@ namespace binary_game
             binarystring += Label1.Content;
             if (binarystring == Answer)
             {
-                if (timer != seconds - seconds/3)
+                if (Timer != Seconds - Seconds/3)
                 {
-                    seconds2 -= 2;
-                    timer = seconds2;
+                    Seconds2 -= 2;
+                    Timer = Seconds2;
                     
                 }
-                score += 1;
+                Score += 1;
                 Start();
             }
             else
@@ -348,7 +348,7 @@ namespace binary_game
         {
             Label[] labels = new Label[] { Label128, Label64, Label32, Label16, Label8, Label4, Label2, Label1 };
             Random rnd = new Random();
-            int chance = rnd.Next(1, 101) - helmet;
+            int chance = rnd.Next(1, 101) - Helmet;
             if(chance > 90)
             {
                 int index = rnd.Next(0, labels.Length);
@@ -369,8 +369,8 @@ namespace binary_game
             if(Pistol > 0) 
             {
                 Pistol -= 1;
-                hit = true;
-                timer += 6;
+                Hit = true;
+                Timer += 6;
                 Glock.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Glock.wav"));
                 Glock.Play();
             }
