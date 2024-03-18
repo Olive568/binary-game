@@ -28,8 +28,8 @@ namespace binary_game
         public Cutscene()
         {
             InitializeComponent();
-            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Briefing.wav");
-            Music.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\CutMusic.wav"));
+            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Briefing.wav");
+            Music.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\CutMusic.wav"));
        
             cut();
         }

@@ -19,6 +19,8 @@ namespace binary_game
             // Read data from the database
             Database DB = new Database();
             db = DB.Read_File();
+            DB.Add_Ranking(db);
+            db = DB.Read_File();
 
             // Add data to the ListView
             foreach (string[] entry in db)

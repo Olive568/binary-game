@@ -9,14 +9,14 @@
         Title="Leaderboards" Height="500" Width="350">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="file:///C:/Users/22-0042c/source/repos/binary-game/binary game/LeaderboardScreen.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+            <ImageBrush ImageSource="file:///C:/Users/Luis Oliver/source/repos/binary-game/binary game/LeaderboardScreen.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
         </Grid.Background>
         <ListView Name="ListViewLeaderboard" Margin="68,78,68,85" Background="{x:Null}" BorderBrush="{x:Null}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Score" DisplayMemberBinding="{Binding Score}"/>
-                    <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Time}"/>
+                    <GridViewColumn Header="Name" Width="70" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Score" Width="70" DisplayMemberBinding="{Binding Score}"/>
+                    <GridViewColumn Header="Time"  Width="70" DisplayMemberBinding="{Binding Time}"/>
                 </GridView>
             </ListView.View>
         </ListView>
