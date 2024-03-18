@@ -9,7 +9,7 @@
         Title="Guide" Height="500" Width="300">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Guide.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\Guide.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
         </Grid.Background>
         <Button Content="Button" HorizontalAlignment="Left" Margin="44,399,0,0" VerticalAlignment="Top" Height="47" Width="199" Opacity="0" Click="Button_Click"/>
     </Grid>

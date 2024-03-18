@@ -9,7 +9,7 @@
         Title="Difficulty" Height="400" Width="300">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Diff.PNG"/>
+            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\Diff.PNG"/>
         </Grid.Background>
         <Button Content="Button" Name="Easy" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Height="59" Width="160" Opacity="0" Click="Easy_Click"/>
         <Button Content="Button" Name="Medium" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Height="59" Width="160" Opacity="0" Click="Medium_Click"/>
