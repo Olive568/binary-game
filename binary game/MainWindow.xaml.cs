@@ -51,7 +51,6 @@ namespace binary_game
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             player.Stop();
-            MessageBox.Show("You are part of the Grenadian CyberStrike Task Force 2 (CSTF2), a highly specialized unit tasked with anti-insurgent and peer to peer warfare operations in the central center. Our Task is to provide a GPS blanket for the 251st infantry division for operation Enduring fury.");
             Guide gd = new Guide();
             gd.Show();
             this.Close();

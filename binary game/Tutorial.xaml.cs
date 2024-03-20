@@ -1,6 +1,8 @@
-﻿using System.Media;
+﻿using System;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace binary_game
 {
@@ -8,9 +10,11 @@ namespace binary_game
     {
         string Answer = "01111011";
         private SoundPlayer player;
+        private MediaPlayer Wrong = new MediaPlayer();
         public Tutorial()
         {
             InitializeComponent();
+            Wrong.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Censor.wav"));
             player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\TutorialVoice.wav");
             player.Play();
             DisableAllSwitchesExcept64();
@@ -102,14 +106,13 @@ namespace binary_game
             string binarystring = $"{Label128.Content}{Label64.Content}{Label32.Content}{Label16.Content}{Label8.Content}{Label4.Content}{Label2.Content}{Label1.Content}";
             if (binarystring == Answer)
             {
-                MessageBox.Show("Good job Lieutenant. Get ready for the field");
                 Cutscene ct = new Cutscene();
                 ct.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Wrong answer. Try again Lieutenant!");
+                Wrong.Play();
                 Label128.Content = 0;
                 Label64.Content = 0;
                 Label32.Content = 0;

@@ -31,6 +31,7 @@ namespace binary_game
         private MediaPlayer Blow = new MediaPlayer();
         private MediaPlayer Glock = new MediaPlayer();
         private MediaPlayer Bomb = new MediaPlayer();
+        private MediaPlayer Wrong = new MediaPlayer();
         int Seconds = 0;
         int Seconds2 = 0;
         int Timer = 0;
@@ -78,6 +79,7 @@ namespace binary_game
             Player.Play();
             Player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\beep.wav");
             Bomb.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Bomb.wav"));
+            Wrong.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Censor.wav"));
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
             _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
@@ -156,7 +158,6 @@ namespace binary_game
                     Bomb.Play();
                     Window2 w2 = new Window2(Score.ToString(),Diff,TotalTime);
                     _dt.Stop();
-                    MessageBox.Show("You lose");
                     this.Close();
                     w2.Show();        
                 }
@@ -260,7 +261,7 @@ namespace binary_game
             }
             else
             {
-                MessageBox.Show("wrong");
+                Wrong.Play();
             }
         }
 
