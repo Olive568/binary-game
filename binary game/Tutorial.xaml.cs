@@ -11,7 +11,7 @@ namespace binary_game
         public Tutorial()
         {
             InitializeComponent();
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\TutorialVoice.wav");
+            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\TutorialVoice.wav");
             player.Play();
             DisableAllSwitchesExcept64();
         }

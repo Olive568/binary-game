@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="Tutorial" Height="365" Width="620">
     <Grid Background="Black">
         <Grid.ColumnDefinitions>

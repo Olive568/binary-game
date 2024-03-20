@@ -26,7 +26,7 @@ namespace binary_game
         public MainWindow()
         {
             InitializeComponent();
-            player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Theme.wav");
+            player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Theme.wav");
             player.Play();
 
         }

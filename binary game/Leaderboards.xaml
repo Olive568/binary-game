@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="Leaderboards" Height="500" Width="350">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="file:///C:/Users/Luis Oliver/source/repos/binary-game/binary game/LeaderboardScreen.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
+            <ImageBrush ImageSource="file:///C:/Users/22-0042c/source/repos/binary-game/binary game/LeaderboardScreen.PNG" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"/>
         </Grid.Background>
         <ListView Name="ListViewLeaderboard" Margin="68,78,68,85" Background="{x:Null}" BorderBrush="{x:Null}">
             <ListView.View>

@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:binary_game"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="400" Width="300">
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Luis Oliver\source\repos\binary-game\binary game\Starting.PNG"/>
+            <ImageBrush ImageSource="C:\Users\22-0042c\source\repos\binary-game\binary game\Starting.PNG"/>
         </Grid.Background>
         <Button Content="" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Center" Height="59" Width="161" Opacity="0" Click="Button_Click"/>
         <Button Content="" HorizontalAlignment="Left" Margin="234,320,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="45" Width="46" RenderTransformOrigin="0.5,0.5" Opacity="0">

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
 using System.IO;
+using System.Windows.Controls.Primitives;
 
 namespace binary_game
 {
@@ -66,28 +67,33 @@ namespace binary_game
                 Guide.Opacity = 100;
             }
             if (Equipment[4] == true)
-            {
-                Kit = Seconds / 10;
-                Seconds = Seconds + Kit;
-            }
+               Kit = Seconds / 3;
+                
             Seconds2 = Seconds;
             if (Equipment[5] == true)
                 Helmet = 5;
             Timer = Seconds;
-            Blow.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\blow.wav"));
-            Player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\GameStart.wav");
+            Blow.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\blow.wav"));
+            Player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\GameStart.wav");
             Player.Play();
-            Player = new SoundPlayer(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\beep.wav");
-            Bomb.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Bomb.wav"));
+            Player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\beep.wav");
+            Bomb.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Bomb.wav"));
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
             _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
         }
         private void _dt_Tick(object sender, EventArgs e)
         {
-            
             int sec = int.Parse(lblTimerDisplay.Content.ToString());
-            Timer--;
+            if (Kit > 0)
+            {
+                Kit--;
+            }
+            else
+            {
+                Timer = Seconds;
+                Seconds--;
+            }
             TotalTime++;
             Player.Play();
             Question.Content = Quest;
@@ -223,22 +229,31 @@ namespace binary_game
         }
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
-            string binarystring = "";
-            binarystring += Label128.Content;
-            binarystring += Label64.Content;
-            binarystring += Label32.Content;
-            binarystring += Label16.Content;
-            binarystring += Label8.Content;
-            binarystring += Label4.Content;
-            binarystring += Label2.Content;
-            binarystring += Label1.Content;
+            string binarystring = Answer;
+            //binarystring += Label128.Content;
+            //binarystring += Label64.Content;
+            //binarystring += Label32.Content;
+            //binarystring += Label16.Content;
+            //binarystring += Label8.Content;
+            //binarystring += Label4.Content;
+            //binarystring += Label2.Content;
+            //binarystring += Label1.Content;
+
             if (binarystring == Answer)
             {
-                if (Timer != Seconds - Seconds/3)
+                // Check if Seconds2 is already at its minimum value
+                if (Seconds2 != Seconds - Seconds / 3)
                 {
-                    Seconds2 -= 2;
+                    if (Diff == "medium")
+                        Seconds2 -= 3;
+                    else
+                        Seconds2 -= 2;
                     Timer = Seconds2;
-                    
+                }
+                else
+                {
+                    // If the timer is already at its minimum value, do not decrement it further
+                    Timer = Seconds2;
                 }
                 Score += 1;
                 Start();
@@ -371,7 +386,7 @@ namespace binary_game
                 Pistol -= 1;
                 Hit = true;
                 Timer += 6;
-                Glock.Open(new Uri(@"C:\Users\Luis Oliver\source\repos\binary-game\binary game\Glock.wav"));
+                Glock.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Glock.wav"));
                 Glock.Play();
             }
             if(Pistol == 0)
