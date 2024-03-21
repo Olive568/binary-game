@@ -230,15 +230,15 @@ namespace binary_game
         }
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
-            string binarystring = Answer;
-            //binarystring += Label128.Content;
-            //binarystring += Label64.Content;
-            //binarystring += Label32.Content;
-            //binarystring += Label16.Content;
-            //binarystring += Label8.Content;
-            //binarystring += Label4.Content;
-            //binarystring += Label2.Content;
-            //binarystring += Label1.Content;
+            string binarystring = "";
+            binarystring += Label128.Content;
+            binarystring += Label64.Content;
+            binarystring += Label32.Content;
+            binarystring += Label16.Content;
+            binarystring += Label8.Content;
+            binarystring += Label4.Content;
+            binarystring += Label2.Content;
+            binarystring += Label1.Content;
 
             if (binarystring == Answer)
             {
