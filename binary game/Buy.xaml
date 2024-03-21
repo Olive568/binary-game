@@ -22,7 +22,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="140,131,0,0" Text="Kevlar. grants a new life. 3 charges . $600" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
         <TextBlock HorizontalAlignment="Left" Margin="140,215,0,0" Text="ECM jammer. reduces the chance of Radio interferance to the bit display by 33%. $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,49,0,0" Text="Toughbook. reduces the chance of Radio interference to the 8-bit display by 33%. number Guide enabled. $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="64" Width="186"/>
-        <TextBlock HorizontalAlignment="Left" Margin="479,131,0,0" Text="Defuse kit. increases timer by 10% $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
+        <TextBlock HorizontalAlignment="Left" Margin="479,131,0,0" Text="Defuse kit. Delays timer start by 10% $200" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,215,0,0" Text="Helmet. decreases the chance of a bitwise shift by 50%. $400" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF1F1F1" Height="50" Width="186"/>
         <Button Content="Start" HorizontalAlignment="Left" Margin="531,306,0,0" VerticalAlignment="Top" Height="46" Width="174" Background="#FFE20F0F" Foreground="#FF28D83B" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Left" Name="Cash" Margin="156,296,0,0" FontSize="50" TextWrapping="Wrap" Text="800" VerticalAlignment="Top" Foreground="White" Height="60" Width="182"/>
