@@ -68,7 +68,7 @@ namespace binary_game
                 Guide.Opacity = 100;
             }
             if (Equipment[4] == true)
-               Kit = Seconds / 3;
+               Kit = Seconds / 10;
                 
             Seconds2 = Seconds;
             if (Equipment[5] == true)
@@ -180,6 +180,7 @@ namespace binary_game
         private void Start()
         {
             Hit = false;
+            kit = seconds / 10;
             Label128.Content = "0";
             Label64.Content = "0";
             Label32.Content = "0";
