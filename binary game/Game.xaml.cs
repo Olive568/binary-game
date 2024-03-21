@@ -93,8 +93,7 @@ namespace binary_game
             }
             else
             {
-                Timer = Seconds;
-                Seconds--;
+                Timer--;
             }
             TotalTime++;
             Player.Play();
@@ -180,7 +179,7 @@ namespace binary_game
         private void Start()
         {
             Hit = false;
-            kit = seconds / 10;
+            Kit = Seconds / 10;
             Label128.Content = "0";
             Label64.Content = "0";
             Label32.Content = "0";
@@ -243,7 +242,6 @@ namespace binary_game
 
             if (binarystring == Answer)
             {
-                // Check if Seconds2 is already at its minimum value
                 if (Seconds2 != Seconds - Seconds / 3)
                 {
                     if (Diff == "medium")
@@ -254,7 +252,6 @@ namespace binary_game
                 }
                 else
                 {
-                    // If the timer is already at its minimum value, do not decrement it further
                     Timer = Seconds2;
                 }
                 Score += 1;
