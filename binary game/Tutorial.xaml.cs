@@ -14,7 +14,6 @@ namespace binary_game
         public Tutorial()
         {
             InitializeComponent();
-            Wrong.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Censor.wav"));
             player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\TutorialVoice.wav");
             player.Play();
             DisableAllSwitchesExcept64();
@@ -112,6 +111,7 @@ namespace binary_game
             }
             else
             {
+                Wrong.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Censor.wav"));
                 Wrong.Play();
                 Label128.Content = 0;
                 Label64.Content = 0;

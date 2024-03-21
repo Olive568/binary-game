@@ -79,7 +79,6 @@ namespace binary_game
             Player.Play();
             Player = new SoundPlayer(@"C:\Users\22-0042c\source\repos\binary-game\binary game\beep.wav");
             Bomb.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Bomb.wav"));
-            Wrong.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Censor.wav"));
             _dt = new DispatcherTimer();
             _dt.Tick += _dt_Tick;
             _dt.Interval = new TimeSpan(0, 0, 0, 1, 0);
@@ -179,7 +178,10 @@ namespace binary_game
         private void Start()
         {
             Hit = false;
-            Kit = Seconds / 10;
+            if (Equipment[4] == true)
+            {
+                Kit = Seconds / 10;
+            }
             Label128.Content = "0";
             Label64.Content = "0";
             Label32.Content = "0";
@@ -259,6 +261,7 @@ namespace binary_game
             }
             else
             {
+                Wrong.Open(new Uri(@"C:\Users\22-0042c\source\repos\binary-game\binary game\Censor.wav"));
                 Wrong.Play();
             }
         }
